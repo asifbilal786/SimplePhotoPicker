@@ -1,25 +1,101 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yyA-jR-dBQ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="qqP-cX-K7P">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yyA-jR-dBQ" customClass="ViewController" customModule="SimplePhotoPicker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="U32-dk-8Ha"/>
+                        <viewControllerLayoutGuide type="bottom" id="T79-Yd-cB1"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="HPV-a5-hNi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="zc5-3K-kza">
+                                <rect key="frame" x="180" y="120" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="ELl-7N-3T1"/>
+                                    <constraint firstAttribute="width" constant="240" id="EYy-gQ-gL4"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjH-Xe-uHC">
+                                <rect key="frame" x="180" y="258" width="240" height="30"/>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.88235294119999996" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Pick Photo"/>
+                                <connections>
+                                    <action selector="pickPhotoTouchUpInside:" destination="yyA-jR-dBQ" eventType="touchUpInside" id="glJ-DF-XLr"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qNc-wB-QUq">
+                                <rect key="frame" x="155" y="298" width="290" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="FXX-vN-OB7"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Camera"/>
+                                    <segment title="Photo Library"/>
+                                    <segment title="Both"/>
+                                </segments>
+                                <connections>
+                                    <action selector="valueChanged:" destination="yyA-jR-dBQ" eventType="valueChanged" id="4CS-nK-GOc"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0U-Kk-aVX" userLabel="Allow Editing View">
+                                <rect key="frame" x="211" y="336" width="178" height="51"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow Editing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6A-0z-5gQ">
+                                        <rect key="frame" x="10" y="15" width="99" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FQB-mB-5N3">
+                                        <rect key="frame" x="119" y="10" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="allowsEditingChanged:" destination="yyA-jR-dBQ" eventType="valueChanged" id="PkF-ZV-P3h"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="d6A-0z-5gQ" firstAttribute="leading" secondItem="k0U-Kk-aVX" secondAttribute="leading" constant="10" id="VTD-jv-Erm"/>
+                                    <constraint firstAttribute="trailing" secondItem="FQB-mB-5N3" secondAttribute="trailing" constant="10" id="djm-0T-r6c"/>
+                                    <constraint firstItem="FQB-mB-5N3" firstAttribute="leading" secondItem="d6A-0z-5gQ" secondAttribute="trailing" constant="10" id="fcS-I2-QnV"/>
+                                    <constraint firstItem="d6A-0z-5gQ" firstAttribute="centerY" secondItem="k0U-Kk-aVX" secondAttribute="centerY" id="r6Q-16-OFP"/>
+                                    <constraint firstItem="FQB-mB-5N3" firstAttribute="top" secondItem="k0U-Kk-aVX" secondAttribute="top" constant="10" id="uM5-0j-xXY"/>
+                                    <constraint firstAttribute="bottom" secondItem="FQB-mB-5N3" secondAttribute="bottom" constant="10" id="wNq-uZ-39c"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RjH-Xe-uHC" firstAttribute="width" secondItem="zc5-3K-kza" secondAttribute="width" id="0nD-bR-Brn"/>
+                            <constraint firstItem="zc5-3K-kza" firstAttribute="centerX" secondItem="HPV-a5-hNi" secondAttribute="centerX" id="4Zn-Wd-t2N"/>
+                            <constraint firstItem="RjH-Xe-uHC" firstAttribute="centerX" secondItem="HPV-a5-hNi" secondAttribute="centerX" id="5rs-K7-buJ"/>
+                            <constraint firstItem="RjH-Xe-uHC" firstAttribute="top" secondItem="zc5-3K-kza" secondAttribute="bottom" constant="10" id="FiU-M3-Yrp"/>
+                            <constraint firstItem="zc5-3K-kza" firstAttribute="top" secondItem="U32-dk-8Ha" secondAttribute="bottom" constant="100" id="Fow-7w-tb5"/>
+                            <constraint firstItem="qNc-wB-QUq" firstAttribute="centerX" secondItem="HPV-a5-hNi" secondAttribute="centerX" id="L8I-O1-YBY"/>
+                            <constraint firstItem="k0U-Kk-aVX" firstAttribute="centerX" secondItem="qNc-wB-QUq" secondAttribute="centerX" id="MJm-Hl-XEo"/>
+                            <constraint firstItem="k0U-Kk-aVX" firstAttribute="top" secondItem="qNc-wB-QUq" secondAttribute="bottom" constant="10" id="aZU-xH-LvV"/>
+                            <constraint firstItem="qNc-wB-QUq" firstAttribute="top" secondItem="RjH-Xe-uHC" secondAttribute="bottom" constant="10" id="eMs-69-a0c"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="zc5-3K-kza" id="apc-uY-Fxo"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YNu-gf-fM2" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="257" y="347"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Placeholder" width="256" height="256"/>
+    </resources>
 </document>
