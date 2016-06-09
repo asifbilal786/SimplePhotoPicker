@@ -26,11 +26,9 @@ Pod::Spec.new do |s|
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/SimplePhotoPicker.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/asifbilal786/SimplePhotoPicker.git', :tag => s.version }
   s.social_media_url = 'https://twitter.com/asifbilal786'
 
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'SimplePhotoPicker/*.swift’
-  
+  s.source_files = 'SimplePhotoPicker/PhotoPicker.swift'
+  s.requires_arc = true
 end
