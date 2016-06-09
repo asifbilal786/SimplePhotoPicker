@@ -32,7 +32,7 @@ pod 'SimplePhotoPicker', '~> 0.1'
 ### MEHTOD 2: (Source files)
 Alternatively, you can directly add file `PhotoPicker.swift` under the folder PhotoPicker to your project.
 
-1. Download the [latest code version](https://github.com/khawars/KSTokenView/archive/master.zip) or add the repository as a git submodule to your git-tracked project.
+1. Download the [latest code version](https://github.com/asifbilal786/SimplePhotoPicker/archive/master.zip) or add the repository as a git submodule to your git-tracked project.
 2. Open your Xcode project, then drag and drop `PhotoPicker.swift` directory onto your project. Make sure to select Copy items when asked if you extracted the code archive outside of your project.
  
 
