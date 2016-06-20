@@ -56,7 +56,7 @@
 		2986B7C31D01E8C4002CDC3D /* SimplePhotoPicker */ = {
 			isa = PBXGroup;
 			children = (
-				2986B7D81D01E8DD002CDC3D /* PhotoPicker */,
+				299FA4BF1D17EBF60029831D /* Core */,
 				2986B7C41D01E8C4002CDC3D /* AppDelegate.swift */,
 				2986B7C61D01E8C4002CDC3D /* ViewController.swift */,
 				2986B7C81D01E8C4002CDC3D /* Main.storyboard */,
@@ -67,12 +67,12 @@
 			path = SimplePhotoPicker;
 			sourceTree = "<group>";
 		};
-		2986B7D81D01E8DD002CDC3D /* PhotoPicker */ = {
+		299FA4BF1D17EBF60029831D /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				2986B7D61D01E8D6002CDC3D /* PhotoPicker.swift */,
 			);
-			name = PhotoPicker;
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +298,7 @@
 				2986B7D51D01E8C4002CDC3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
