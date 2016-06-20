@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://github.com/asifbilal786/SimplePhotoPicker'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots     = 'https://raw.githubusercontent.com/asifbilal786/SimplePhotoPicker/screenshots/Screenshot_1.png'
   s.frameworks       = 'UIKit'
   s.requires_arc     = true
 

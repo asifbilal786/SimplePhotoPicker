@@ -8,9 +8,9 @@
 
 import UIKit
 
-class PhotoPicker: NSObject {
+public class PhotoPicker: NSObject {
     
-    enum PickerSourceType: Int {
+    public enum PickerSourceType: Int {
         case Camera = 0,
         PhotoLibrary,
         CameraAndPhotoLibrary
@@ -19,7 +19,7 @@ class PhotoPicker: NSObject {
 
     var successBlock:((originalPhoto:UIImage?, editedPhoto: UIImage?) -> ())!
     
-    func pick(allowsEditing:Bool = false,
+    public func pick(allowsEditing:Bool = false,
               pickerSourceType: PickerSourceType = .PhotoLibrary,
               controller: UIViewController,
               successBlock success: ((originalPhoto:UIImage?, editedPhoto: UIImage?) -> ()))
@@ -86,11 +86,11 @@ extension PhotoPicker: UINavigationControllerDelegate {
 
 extension PhotoPicker: UIImagePickerControllerDelegate {
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+    public func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    public func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         let originalPhoto = info[UIImagePickerControllerOriginalImage] as? UIImage
         let editedPhoto = info[UIImagePickerControllerEditedImage] as? UIImage
